@@ -20,6 +20,4 @@ describe 'Docking station' do
     expect(docking_station).to respond_to(:check)
   end
 
-
-
 end

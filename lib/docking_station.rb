@@ -5,7 +5,8 @@ attr_reader :bike
 # @bike = bike
 #end
 
-def release(bike)
+def release
+  Bike.new
 end
 
 
