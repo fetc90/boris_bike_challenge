@@ -8,7 +8,6 @@ describe 'Docking station' do
   end
 
   it 'should give an error message if no bike available to release' do
-
     expect {docking_station.release}.to raise_error("no bike available")
   end
 
@@ -26,5 +25,8 @@ describe 'Docking station' do
     expect(docking_station).to respond_to(:check)
   end
 
-
+  it 'should give an error message if dock is full' do
+    bike = Bike.new
+    expect{docking_station.dock(bike)}.to raise_error("docking station is full")
+  end
 end
