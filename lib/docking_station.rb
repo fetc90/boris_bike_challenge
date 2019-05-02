@@ -1,9 +1,9 @@
 class DockingStation
-attr_reader :bike
+attr_reader :bikes
 
-#def initialize(bike)
-# @bike = bike
-#end
+def initialize
+  @bikes = []
+end
 
 def release
   Bike.new
@@ -11,6 +11,7 @@ end
 
 
 def dock(bike)
+  @bikes.push(bike)
 end
 
 def check(bike)

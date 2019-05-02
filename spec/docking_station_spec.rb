@@ -7,13 +7,14 @@ describe 'Docking station' do
     expect(docking_station).to respond_to(:release)
   end
 
-  it 'should check bike is working' do
-    bike = Bike.new
-    expect(bike).to respond_to(:working?)
+  it 'should have an argument' do
+    expect(docking_station).to respond_to(:dock).with(1).argument
   end
 
   it 'should dock the bike' do
-    expect(docking_station).to respond_to(:dock).with(1).argument
+    bike = Bike.new
+    docking_station.dock(bike) # Have to write code for TDD to test otherwise not testing anything
+    expect(docking_station.bikes).to include(bike)
   end
 
   it 'should check for docked bikes' do
