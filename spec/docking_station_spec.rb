@@ -7,6 +7,11 @@ describe 'Docking station' do
     expect(docking_station).to respond_to(:release)
   end
 
+  it 'should give an error message if no bike available to release' do
+
+    expect {docking_station.release}.to raise_error("no bike available")
+  end
+
   it 'should have an argument' do
     expect(docking_station).to respond_to(:dock).with(1).argument
   end
@@ -20,5 +25,6 @@ describe 'Docking station' do
   it 'should check for docked bikes' do
     expect(docking_station).to respond_to(:check)
   end
+
 
 end

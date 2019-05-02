@@ -6,7 +6,9 @@ def initialize
 end
 
 def release
-  Bike.new
+  if @bikes.empty?
+    raise Exception.new "no bike available"
+  end 
 end
 
 
