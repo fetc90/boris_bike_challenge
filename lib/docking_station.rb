@@ -1,4 +1,4 @@
-require 'bike'
+require_relative 'bike'
 
 class DockingStation
 
@@ -8,17 +8,17 @@ attr_reader :bikes
     @bikes = []
   end
 
+  def dock(bike)
+    fail "docking station is full" if @bikes.count >= 20
+    @bikes << bike
+  end
+
 def release
-  raise Exception.new "no bike available" if @bikes.empty?
+  fail "no bike available" if @bikes.empty?
+  @bikes.pop
 end
 
-def dock(bike)
-  raise Exception.new "docking station is full" if bikes.count >= 20
-  @bikes.push(bike)
-end
-
-
-def check(bike)
-end
+# def check(bike)
+# end
 
 end
